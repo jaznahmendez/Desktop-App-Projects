@@ -1,0 +1,184 @@
+@import 'variables';
+
+body{
+    background-color: $color-bgn;
+    font-family:$font;
+}
+
+.button-group{
+    position: absolute ;
+    left: 50%; top: 10%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@mixin button-default{
+    color: $color-bttn-text;;
+    width: 180px;
+    height: 100px;
+    font-size: larger;
+    @content;
+}
+
+.button-group button{
+    @include button-default{
+        background-color:$color-bttn;
+        border: none;
+    }
+}
+
+.button-group button:hover{
+    @include button-default{
+    background-color: $color-hover-bttn;
+    border: 5px  dashed $color-border;
+    }
+}
+
+main{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+span{
+   font-size: large;
+}
+
+h1{
+    font-size: x-large;
+    font-style: italic;
+    border: 3px  dashed $color-border;
+    background-color:$color-bttn;
+}
+
+.text{
+    @extend span;
+    margin-bottom: 15px;
+}
+
+.container{
+    display: table;
+    width: 100%;
+    background-color:$color-bg-container ;
+}
+
+img{
+    border-radius: 20px;
+    border: 5px  dashed $color-border;
+    height: 400px;
+    width: 290px;
+    margin: 10px;
+    object-fit:cover;
+}
+
+.me_gallery{
+    display: table;
+    width: min-content;
+    margin: auto;
+    > img{
+        float: left;
+        box-sizing: border-box;
+    }
+} 
+
+@mixin default-grid{
+    display: grid;
+    text-align: center;
+}
+.sobre_mi > .me_gallery{
+    @include default-grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.hobbies > .me_gallery{
+    @include default-grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.family > .me_gallery{
+    @include default-grid;
+    grid-template-columns: repeat(3, 2fr);
+}
+
+td{
+    color: $color-bgn;
+    background-color: $color-td;
+    border: 3px dotted $color-dark-border;
+    padding: 10px;
+    float: left;
+    box-sizing: border-box;
+    width: 200px;
+}
+
+@mixin tablet{
+    @media screen and (max-width: 1239px){
+        @content;
+    }
+}
+
+@include tablet{
+    .button-group{
+        top: 20%;
+        grid-template-columns: repeat(2, 2fr);
+    }
+
+    .hobbies > .me_gallery{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .family > .me_gallery{
+        grid-template-columns: repeat(2, 3fr);
+    }
+
+    main{
+        top: 40%;
+    }
+
+}
+
+@mixin phone{
+    @media screen and (max-width: 619px){
+        @content;
+    }
+}
+
+@include phone{
+    .button-group{
+        top: 40%;
+        grid-template-columns: repeat(1, 4fr);
+    }
+
+    main{
+        top: 80%;
+    }
+
+    .sobre_mi > .me_gallery{
+        grid-template-columns: repeat(1, 2fr);
+    }
+
+    .hobbies > .me_gallery{
+        grid-template-columns: repeat(1, 4fr);
+    }
+
+    .family > .me_gallery{
+        grid-template-columns: repeat(1, 6fr);
+    }  
+        
+    .contact_table{
+        > table{
+            transform: translate(-50%, -50%);
+            margin: 50%;
+        }
+    } 
+}
+    
+.me_gallery::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
