@@ -1,0 +1,89 @@
+@import 'variables';
+
+body{
+    background-color: $color-bgn;
+    font-family:$font;
+}
+
+
+main{
+    margin-top: 20px;
+    background-color: $color-bg-container;
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+    font-style: italic;
+    border: 3px  dashed $color-border;
+    background-color:$color-bttn;
+}
+
+input[type=text]{
+    width: 40%;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    margin-top: 10px;
+    width: 40%;
+    font-size: larger;
+    font-weight: bold;
+    background-color: $color-bttn;
+    border-color: $color-dark-border;
+}
+
+.container{
+    display: table;
+    width: 100%;
+    background-color:$color-bg-container ;
+}
+
+@mixin default-grid{
+    display: grid;
+    text-align: center;
+}
+
+.news > .me_gallery{
+    @include default-grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.me_gallery{
+    display: table;
+    margin: auto;
+    > a > .div_new{
+        width: 95%;
+        padding: 5px;
+        margin: 5px;
+        border: 3px solid $color-border;
+        float: left;
+        box-sizing: border-box;
+        height: 400px;
+    }
+} 
+
+img{
+    height: 200px;
+    width: 75%;
+    margin: 10px;
+    object-fit:cover;
+}
+
+a {
+    all: unset;
+}
+
+.div_new:hover{
+    background-color: $color-bttn-text;
+    cursor: pointer;
+}
+
+h2{
+    font-size: large;
+}
