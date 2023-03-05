@@ -1,0 +1,10 @@
+<div class="me_gallery">
+    {{#each news}}
+         <a href={{this.url}} target="_blank" >
+            <div class="div_new">
+                <h2>{{this.title}}</h2>
+                <img src={{this.urlToImage}}>
+            </div>
+        </a>
+    {{/each}}
+</div>

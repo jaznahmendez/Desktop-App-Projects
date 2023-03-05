@@ -1,0 +1,82 @@
+body {
+  background-color: #BCECFF;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  margin-top: 20px;
+  background-color: #66B8D9;
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-style: italic;
+  border: 3px dashed #18789E;
+  background-color: #1F9FD1;
+}
+
+input[type=text] {
+  width: 40%;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  margin-top: 10px;
+  width: 40%;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #1F9FD1;
+  border-color: rgb(13, 39, 117);
+}
+
+.container {
+  display: table;
+  width: 100%;
+  background-color: #66B8D9;
+}
+
+.news > .me_gallery {
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.me_gallery {
+  display: table;
+  margin: auto;
+}
+.me_gallery > a > .div_new {
+  width: 95%;
+  padding: 5px;
+  margin: 5px;
+  border: 3px solid #18789E;
+  float: left;
+  box-sizing: border-box;
+  height: 400px;
+}
+
+img {
+  height: 200px;
+  width: 75%;
+  margin: 10px;
+  object-fit: cover;
+}
+
+a {
+  all: unset;
+}
+
+.div_new:hover {
+  background-color: rgb(195, 227, 255);
+  cursor: pointer;
+}
+
+h2 {
+  font-size: large;
+}
