@@ -1,0 +1,40 @@
+div{
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.solid{
+    width: 150px;
+}
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: x-large;
+}
+
+span{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    color: rgb(0, 0, 0);
+}
+
+.divider{
+    border-right: 1px solid rgb(138, 137, 137);
+    text-align: right;
+    padding-right: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+}
+
+th{
+    height: 40px;
+    text-align: left;
+    padding-left: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(136, 133, 133);
+}
+
+table{
+    margin: 0 35%;
+}
